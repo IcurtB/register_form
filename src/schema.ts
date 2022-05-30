@@ -7,11 +7,18 @@ export const schemaAuth = yup.object().shape({
 })
 
 export const schemaReg = yup.object().shape({
-    firstName: yup.string().required(),
-    lastName: yup.string().required(),
-    nickName: yup.string().required(),
-    email: yup.string().required(),
-    password: yup.string().required(),
-    confPassword: yup.string().required(),
-    check: yup.boolean()
+    firstName: yup.string().required("Имя не может быть пустым"),
+    lastName: yup.string().required("Фамилие не может быть пустым"),
+    nickName: yup.string().required("Акаунт не моежт быть пустым"),
+    email: yup.string()
+        .required("Имаил не может быть пустым")
+        .email("У вас не верный фооормат email"),
+    password: yup.string().required("Пароль не может быть пустым").matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/,
+        "Должен быть не меньше 8, одну заглавную и одну строчную буквы и цифры."
+    ),
+    confPassword: yup.string()
+        .required("Пароль не может быть пустым")
+        .oneOf([yup.ref("password")],"Пароли не совподают"),
+    checked: yup.boolean()
 })

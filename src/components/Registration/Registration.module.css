@@ -32,10 +32,18 @@
     align-items: center;
 }
 .regContainer p {
+    color: rgba(220, 20, 60, 0.9);
     margin: 0;
     width: 220px;
     display: flex;
     align-items: center;
+}
+.regContainer div > label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #dfe2de;
+
 }
 .btn{
     font-size: 20px;
@@ -44,4 +52,9 @@
     font-weight: 600;
     text-transform: uppercase;
     color: #10283d;
+}
+.check {
+    width: 20px!important;
+    height: 20px!important;
+
 }

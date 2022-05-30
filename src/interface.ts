@@ -11,5 +11,5 @@ export interface IReg {
     email:string,
     password:string,
     confPassword:string,
-    check: boolean
+    checked: boolean
 }

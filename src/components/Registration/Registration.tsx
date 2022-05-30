@@ -12,6 +12,7 @@ const Registration: React.FC = () => {
         resolver: yupResolver(schemaReg)
     })
     const getValues = (data:IReg) => console.log(data)
+    const showPassword = watch("checked", false)
     return(
         <div className={s.container}>
             <Links/>
@@ -36,13 +37,20 @@ const Registration: React.FC = () => {
                 </fieldset>
                 <fieldset>
                     <div>
-                        <input type="password" placeholder={"Пароль"} {...register("password")}/>
-                        {errors?.email && <p>{errors.email.message}</p>}
+                        <label htmlFor="check">
+                            <input id="check" className={s.check}
+                                   type="checkbox" {...register("checked")}/>
+                            Показать пароль
+                        </label>
+                    </div>
+                    <div>
+                        <input type={showPassword ? "text" : "password"} placeholder={"Пароль"} {...register("password")}/>
+                        {errors?.password && <p>{errors.password.message}</p>}
                     </div>
 
                     <div>
-                        <input type="password" placeholder={"Повторите пароль"} {...register("confPassword")}/>
-                        {errors?.email && <p>{errors.email.message}</p>}
+                        <input type={showPassword ? "text" : "password"} placeholder={"Повторите пароль"} {...register("confPassword")}/>
+                        {errors?.confPassword && <p>{errors.confPassword.message}</p>}
                     </div>
                 </fieldset>
                 <input className={s.btn} type="submit"/>

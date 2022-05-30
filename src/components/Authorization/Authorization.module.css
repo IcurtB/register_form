@@ -5,7 +5,7 @@
     flex-direction: column;
 
 }
-.regContainer{
+.authContainer{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,10 +16,10 @@
     border-radius: 15px;
     border: 1px solid rebeccapurple;
 }
-.regContainer fieldset {
+.authContainer fieldset {
     border: none;
 }
-.regContainer input {
+.authContainer input {
     width: 250px;
     height: 40px;
     border: none;
@@ -28,11 +28,12 @@
     border-radius: 10px;
     margin: 5px 15px 5px 0;
 }
-.regContainer div{
+.authContainer div{
     display: flex;
     align-items: center;
 }
-.regContainer p {
+.authContainer p {
+    color: rgba(220, 20, 60, 0.8);
     margin: 0;
     width: 220px;
     display: flex;
