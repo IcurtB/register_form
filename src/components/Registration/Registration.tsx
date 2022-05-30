@@ -3,8 +3,9 @@ import {useForm} from "react-hook-form";
 import {IReg} from "../../interface";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {schemaReg} from "../../schema";
-import Links from "../Links/Link";
+import s from "./Registration.module.css"
 
+import Links from "../Links/Link";
 const Registration: React.FC = () => {
     const {register, formState: {errors}, handleSubmit, watch} = useForm<IReg>({
         mode:"onBlur",
@@ -12,9 +13,9 @@ const Registration: React.FC = () => {
     })
     const getValues = (data:IReg) => console.log(data)
     return(
-        <div>
+        <div className={s.container}>
             <Links/>
-            <form onSubmit={handleSubmit(getValues)}>
+            <form className={s.regContainer} onSubmit={handleSubmit(getValues)}>
                 <fieldset>
                     <div>
                         <input type="text" placeholder={"Имя"} {...register("firstName")} />
@@ -34,13 +35,17 @@ const Registration: React.FC = () => {
                     </div>
                 </fieldset>
                 <fieldset>
-                    <input type="password" placeholder={"Пароль"} {...register("password")}/>
-                    {errors?.email && <p>{errors.email.message}</p>}
+                    <div>
+                        <input type="password" placeholder={"Пароль"} {...register("password")}/>
+                        {errors?.email && <p>{errors.email.message}</p>}
+                    </div>
 
-                    <input type="password" placeholder={"Повторите пароль"} {...register("confPassword")}/>
-                    {errors?.email && <p>{errors.email.message}</p>}
+                    <div>
+                        <input type="password" placeholder={"Повторите пароль"} {...register("confPassword")}/>
+                        {errors?.email && <p>{errors.email.message}</p>}
+                    </div>
                 </fieldset>
-                <input type="submit"/>
+                <input className={s.btn} type="submit"/>
             </form>
         </div>
     )
