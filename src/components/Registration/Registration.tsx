@@ -30,7 +30,6 @@ const Registration: React.FC = () => {
                         <input type="email" placeholder={"Имаил"} {...register("email")}/>
                         {errors?.email && <p>{errors.email.message}</p>}
                     </div>
-
                 </fieldset>
                 <fieldset>
                     <input type="password" placeholder={"Пароль"} {...register("password")}/>

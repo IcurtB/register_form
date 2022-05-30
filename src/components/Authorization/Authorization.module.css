@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.authContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+    height: 250px;
+    background-color: #10283d;
+    border-radius: 15px;
+    border: 1px solid rebeccapurple;
+}
+.authContainer fieldset {
+    border: none;
+}
+.authContainer input {
+    width: 250px;
+    height: 40px;
+    border: none;
+    background-color: #dfe2de;
+    padding-left: 10px;
+    border-radius: 10px;
+    margin: 5px 15px 5px 0;
+}
+.authContainer div{
+    display: flex;
+    align-items: center;
+}
+.authContainer p {
+    margin: 0;
+    width: 220px;
+    display: flex;
+    align-items: center;
+}
+.btn{
+    font-size: 20px;
+    width: 150px!important;
+    height: 30px!important;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #10283d;
+}

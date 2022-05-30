@@ -3,7 +3,7 @@ import {IAuth} from "../../interface";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {schemaAuth} from "../../schema";
-
+import s from "./Authorization.module.css"
 const Authorization:React.FC = () => {
 
     const {formState: {errors}, register, handleSubmit} = useForm<IAuth>({
@@ -12,8 +12,8 @@ const Authorization:React.FC = () => {
     })
     const getValues = (data:IAuth) => console.log(data)
     return(
-        <>
-            <form onSubmit={handleSubmit(getValues)}>
+        <div className={s.container}>
+            <form className={s.authContainer} onSubmit={handleSubmit(getValues)} >
                 <fieldset>
                     <div>
                         <input type="text" {...register("nickName")} placeholder={"Ваш акаунт, пожалуйста"}/>
@@ -28,9 +28,9 @@ const Authorization:React.FC = () => {
                         {errors?.password && <p>{errors.password.message}</p>}
                     </div>
                 </fieldset>
-                <input type="submit"/>
+                <input className={s.btn} type="submit"/>
             </form>
-        </>
+        </div>
     )
 }
 export default Authorization
