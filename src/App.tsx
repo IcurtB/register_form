@@ -6,7 +6,8 @@ function App() {
   return (
       <BrowserRouter>
           <Routes>
-              <Route/>
+              <Route path={'/'} element={<Authorization/>}/>
+              <Route path={'/reg'} element={<Registration/>}/>
               {/*<Authorization/>*/}
               {/*<Registration/>*/}
           </Routes>

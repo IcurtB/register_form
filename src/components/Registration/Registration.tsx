@@ -3,6 +3,7 @@ import {useForm} from "react-hook-form";
 import {IReg} from "../../interface";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {schemaReg} from "../../schema";
+import Links from "../Links/Link";
 
 const Registration: React.FC = () => {
     const {register, formState: {errors}, handleSubmit, watch} = useForm<IReg>({
@@ -11,7 +12,8 @@ const Registration: React.FC = () => {
     })
     const getValues = (data:IReg) => console.log(data)
     return(
-        <>
+        <div>
+            <Links/>
             <form onSubmit={handleSubmit(getValues)}>
                 <fieldset>
                     <div>
@@ -40,7 +42,7 @@ const Registration: React.FC = () => {
                 </fieldset>
                 <input type="submit"/>
             </form>
-        </>
+        </div>
     )
 }
 export default Registration
