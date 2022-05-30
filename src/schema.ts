@@ -6,3 +6,12 @@ export const schemaAuth = yup.object().shape({
     password: yup.string().required("Пароль не может быть пустым")
 })
 
+export const schemaReg = yup.object().shape({
+    firstName: yup.string().required(),
+    lastName: yup.string().required(),
+    nickName: yup.string().required(),
+    email: yup.string().required(),
+    password: yup.string().required(),
+    confPassword: yup.string().required(),
+    check: yup.boolean()
+})
